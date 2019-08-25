@@ -10,3 +10,16 @@ if (environment.production) {
 
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
+
+declare global {
+  interface String {
+    codify: () => string;
+  }
+}
+
+String.prototype.codify = function() {
+  return this.split(/\r?\n/g)
+    .slice(1, -1)
+    .map(row => row.replace(/^\s*\|/g, ''))
+    .join('\n');
+};
