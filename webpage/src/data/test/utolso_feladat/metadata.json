@@ -1,0 +1,10 @@
+{
+  "title": "Utolsó tutorial",
+  "author": {
+    "fullName": "Frey Balázs",
+    "email": "balazs.frey@schdesign.hu"
+  },
+  "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a felis pulvinar, faucibus massa.",
+  "requiredTime": 30,
+  "hardness": "nehéz"
+}

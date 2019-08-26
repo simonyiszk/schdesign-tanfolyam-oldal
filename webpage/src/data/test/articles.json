@@ -1,0 +1,14 @@
+[
+  {
+    "id": "elso_tutorial",
+    "dependsOn": []
+  },
+  {
+    "id": "masodik_tutorial",
+    "dependsOn": ["elso_tutorial"]
+  },
+  {
+    "id": "utolso_feladat",
+    "dependsOn": ["masodik_tutorial"]
+  }
+]

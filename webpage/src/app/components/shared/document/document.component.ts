@@ -1,7 +1,8 @@
 import {Component, Input} from '@angular/core';
 import {ParserService} from "../../../services/parser.service";
 import {DataService} from "../../../services/data.service";
-import {Document} from "../../../model/document";
+import {Metadata} from "../../../model/metadata";
+import {Article} from "../../../model/article";
 
 @Component({
   selector: 'app-document',
@@ -11,17 +12,21 @@ import {Document} from "../../../model/document";
 export class DocumentComponent {
   html: string;
 
-  @Input() set documentName(value: string) {
-    this.loadDocumentBody(value);
+  private _article: Article;
+  @Input() set article(value: Article) {
+    if (!value) {
+      return;
+    }
+
+    this._article = value;
+    this.html = this.parserService.parse(value.content);
   }
 
-  constructor(private parserService: ParserService,
-              private dataService: DataService) {
+  get article(): Article {
+    return this._article;
   }
 
-  private async loadDocumentBody(name: string) {
-    const documentBody = await this.dataService.getDocumentBody(name);
-    this.html = this.parserService.parse(documentBody);
-  }
 
+  constructor(private parserService: ParserService) {
+  }
 }
