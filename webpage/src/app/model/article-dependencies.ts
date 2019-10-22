@@ -1,4 +1,6 @@
+export type ID = string;
+
 export interface ArticleDependencies {
-  id: string;
-  dependsOn: Array<string>;
+  id: ID;
+  dependsOn: Array<ID>;
 }

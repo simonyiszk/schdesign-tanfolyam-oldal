@@ -35,7 +35,7 @@ export class ParserService {
 
   constructor() {
     hljs.initHighlightingOnLoad();
-    hljs.configure({ tabReplace: '\t' });0
+    hljs.configure({ tabReplace: '\t' });
   }
 
   parse(text: string): string {

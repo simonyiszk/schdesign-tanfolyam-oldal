@@ -1,0 +1,34 @@
+$main-color: #F8485E;
+
+
+main {
+
+  .image {
+    height: 50vh;
+    width: 100vw;
+    background-color: blue;
+  }
+
+  .ribbon {
+    background-color: $main-color;
+    width: 110vw;
+    height: 366px;
+    transform-origin: left bottom;
+    transform: rotate(-9deg);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      font-family: 'Roboto Mono', monospace;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 96px;
+      line-height: 112px;
+      color: white;
+    }
+  }
+}
+
+
